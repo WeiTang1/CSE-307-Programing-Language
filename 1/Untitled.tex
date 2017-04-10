@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+\[CSE307
+Wei Tang
+108979235
+Assignment 1
+$
+1.1:
+
+a: lexical error(java): lexical errors are detected by scanner
+
+  String s@ = "helloworkd";
+
+  this line of code would generate a lexical error because @ is reserved by java
+
+b: syntax error(java): synths errors are detected by parser
+
+  String s ="hello world"
+
+  this line of code would generate a syntax error because its lacking a ;
+
+c: static semantic error(java): static semantic errors are detected by semantic analysis
+
+  int i = "helloworld";
+
+  this line of code would generate a static semantic error because a string cannot be assigned to an int
+
+d: dynamic semantic error(java): dynamic semantic error are detected by code generator
+
+  
+  int[] array;
+  array = new int[10];
+  print(array[11]);
+
+ those lines of code would generator a dynamic semantic error because array[11] is out of bound.
+
+e: error that cannot be caught by compiler(python): nothing catches the error
+  
+  word = 'Hello'
+  word[0]='h'
+
+these line of code would not generate any compiler error but it wouldn't work because in python strings are immutable.
+
+1.4 :
+
+the code will compile and work but with error exceptions like if j = 0 or i = 0, the module operation would return a error. the program is gonna be slower, because module operations are equivalent to three operations.
+
+1.8:
+
+if the program contains multiple files, changing one file would force all other files to recompile, produce unnecessary work.
+
+If a file data is changed due to some other reason. For example, if the file data is corrupted due to wrong compression, the make command would not recompile the file. Because make is not within compiler, it would not recognize the language semantic.
+
+$\]
+\end{document}

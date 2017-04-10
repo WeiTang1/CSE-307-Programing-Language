@@ -1,0 +1,35 @@
+fun writeNrec(s,i:int,n:int) =
+  if i<n then concat([s,writeNrec(s,i+1,n)])
+  else "";
+print(writeNrec("s",1,11))
+
+fun giftRecHelper(i:int,n:int) =
+  if i<n-1 andalso i = (n-1) div then concat(["|",
+      writeNrec("-", 0 , (n-1) div 2),"+",
+      writeNrec("-",0,(n-3) div 2),"|\n",figtRecHelper(i+1,n)])
+  else if i <n-1 then concat(["|",writeNrec(" ",0,(n-3) div 2),"|",
+      writeNrec(" ",0,(n-3) div 2),"|\n",figtRecHelper(i+1,n)])
+  else "";
+print(figtRecHelper(1,11));
+
+fun gift(n:int) =
+  concat([writeNrec("-",1,n),"\n",
+          giftRecHelper(1,n), writeNrec("-", 1, n),"\n"]);
+print(gift(11));
+
+
+
+
+# 2
+
+fun
+
+
+
+#3
+
+fun pyramidrec(I,N) =  if N = 0 then []
+            else concat ([writeNrecs(" ",1,n-1) , writeNrecs("str(N),1,2I-1),"\n",pyramidRec(I+1,N)]);
+fun pyramid(N)=
+    pyramidrec(1,N);
+pyramid(6);

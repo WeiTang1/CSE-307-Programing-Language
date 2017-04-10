@@ -1,0 +1,5 @@
+:- table p/1.
+?- set_prolog_flag(max_table_answer_action, bounded_rationality).
+?- set_prolog_flag(max_table_answer_depth, 3).
+p(f(X)) :- p(X).
+p((0)).

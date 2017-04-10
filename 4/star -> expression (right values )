@@ -1,0 +1,93 @@
+* Test case 1:
+{
+  number1 = 125;
+  number2 = 210;
+  print("The minimum is: ");
+  if (number1 < number2) {
+    print(number1);
+  } else {
+    print(number2);
+  }
+}
+The output from this file should be:
+The minimum is: 125
+ 
+* Test case 2:
+{
+  number1 = 25;
+  number2 = 10;
+  while(number1 <> number2) {
+    if (number1 > number2) {
+      number1 = number1 - number2;
+    } else {
+      number2 = number2 - number1;
+    }
+  }
+  print("The greatest common divider is: ");
+  print(number1);
+}
+The output from this file should be:
+The greatest common divider is: 5
+ 
+* Test case 3:
+{
+  data = [ 300, 125, 12, 65, 9943, 9000 ];
+  min = data[0];
+  minIndex = 0;
+  i = 1; 
+  while (i < 6){
+    if (data[i] < min){
+       min = data[i];
+       minIndex = i;
+    }
+   i = i + 1;
+  }
+  print(minIndex);
+}
+The output from this file should be:
+2
+ 
+* Test case 4:
+{
+  number = 33;
+  isPrime = 1;
+  i = 2;
+  while(i<number && isPrime==1) {
+    if (number%i==0) {
+      isPrime = 0;
+    }
+   i = i + 1;
+  }
+  if(isPrime==1){
+    print("isPrime is true");
+  } else {
+    print("isPrime is false");
+  }
+}
+The output from this file should be:
+Prime is false
+ 
+* Test case 5:
+{
+    data = [ [ 100, 42 ], [ 100, 50 ], [ 123, 456 ], [ 300, 9000 ] ];
+    result = [ 0, 0, 0, 0 ];
+    i = 0;
+    while (i < 4){
+        a = data[i][0];
+        b = data[i][1];
+        if (a > 0){
+            while (b > 0){
+                if (a > b){
+                    a = a - b;
+                } else {
+                    b = b - a;
+                }
+           }
+        }
+        result[i] = a;
+        i = i + 1;
+    }
+    print(result);
+}
+The output from this file should be:
+[2, 50, 3, 300]

@@ -1,0 +1,28 @@
+fun rec(Current,Amount,N,Cap,Refill,ListPays) =
+  if Current = N+1 then [0]
+  else rec2(for(1,N),Current,Amount,N,Cap,Refill,ListPays)
+and
+findPay(Current,ListPays) = if #1(hd(ListPays))=Current then #2(hd(ListPays))
+  else findPay(Current,tl(ListPays));
+rec3(A,L) = if L= [] then []
+  else hd(L)+A::rec3(A,tl(L));
+fun refill(A,R,C) = if A+R>C then C
+  else A+R;
+rec2(ListAmounts,Current, Amount , N,Cap,Refill,ListPays) =
+  if ListAmounts = [] then []
+  else
+    rec3(hd(ListAmounts)*findPay(Current,ListPays),rec(Current+1,refill(Amount-hd(ListAmounts),Refill,Cap),N,Cap,Refill,ListPays))@rec2(tl(ListAmounts),Current, Amount , N,Cap,Refill,ListPays);
+fun max(L)= if [] then 0
+  else if tl(L) = [] then hd(L)
+  else if hd(L)>max(tl(L)) then hd(L)
+  else max(tl(L));
+fun total_fun(N,Cap,Refill,ListPays) =
+  max(rec(1,Cap,N,Cap,Refill,ListPays));
+
+
+
+
+
+total_fun(4, 5, 2, [(1,4),(2,~1),(3,~2),(4,3)]);
+total_fun(4, 5, 2, [(1,4),(2,1),(3,2),(4,3)]);
+total_fun(4, 2, 1, [(1,1),(2,2),(3,4),(4,3)]);

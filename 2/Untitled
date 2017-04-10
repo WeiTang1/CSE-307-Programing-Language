@@ -1,0 +1,67 @@
+fun gen(N) = if N=1 then [1]
+  else gen(N-1)@[N];
+
+gen(5); (* [1,2,3,4,5]*)
+
+fun remove(X,L) = if L=[] then []
+	else if hd(L) = X then remove (X, tl(L))
+  else hd(L)::remove(X,tl(L));
+
+fun member(X,[])= false
+  | member(X,H::T) = of J + X then true
+    else member(X,T);
+
+fun member(X,L) = if L = nill then []
+  else if hd(L)=X then true
+  else member(X,tl(L));
+
+remove(1,[1,1,1,1,1,2,1]);()
+
+fun remove(X,[]) = []
+  | remove(X,H::T) = if X=H then remove(X,T)
+   else H::remove(X,T);
+
+fun removeduplicates1(L) = if L = [] then []
+  else hd(L)::remove(hd(L),removeduplicates1(tl(L)));
+
+fun removeduplicates1([]) = []
+  | removeduplicates1(H::T) =
+    H::remove(H,removeduplicates1(T));
+
+fun removeduplicates2(L) = if L = [] then []
+  else if memner(hd(L),tl(L)) then remove(hd(L),removeduplicates(tl(L)))
+  else hd(L)::removeduplicates2(tl(L));
+
+fun removeduplicates2([]) = []
+  | removeduplicates2(H::T) = if member(H,T) then remove(H,removeduplicates2(T))
+  else H::remoeduplicates2(T);
+
+
+fun take(L) = if L = [] then []
+  else hd(L):: skip(tl(L))
+and
+skip(L) = if L = [] then []
+    else take (tl(L));
+
+fun merge([],L2) = L2
+  | merge(L1,[]) = L1
+  | merge(H1::T1,H2::T2) = if H1<H2
+  then H1::merge(T1,H2::T2)
+    else H2::merge(H1::T1,T2);
+
+
+
+fun sort(L) = if L = [] then []
+  else tl[L]=[] then L
+  else merge(sort(take(L))),sort(skip(L));
+
+sort([6,5,4,3,2,7])
+fun get(L,K) = if L=H::[] then H
+
+fun binarySearchHelper(X,L,Low,High) =
+  if High<Low then ~1
+  else if get(L,low+(high-low) div 2)=X then
+  Low+(High-Low) div 2
+  else if get(L,Low+(High-Low)div2)>X
+  then binarySearchHelper(X,L,Low,Low+(High-Low)div 2 -1)
+  else binarySearchHelper(X,L,Low+(High-Low)div 2+1,High);
